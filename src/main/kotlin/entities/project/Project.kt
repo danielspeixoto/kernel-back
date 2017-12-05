@@ -1,0 +1,1 @@
+data class Project(val name: String)
