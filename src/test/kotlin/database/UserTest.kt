@@ -1,6 +1,7 @@
 package database
 
 import entities.user.User
+import org.amshove.kluent.shouldEqual
 import org.jetbrains.spek.api.Spek
 import org.jetbrains.spek.api.dsl.given
 import org.jetbrains.spek.api.dsl.it
@@ -14,7 +15,7 @@ class UserTest : Spek({
             usersDB.drop()
         }
         on("insertion") {
-            val user = User.User(name = "inserted", email = "test@t.com")
+            val user = User(name = "inserted", email = "test@t.com")
             usersDB.insertOne(user)
             it("should be able to retrieve the inserted user") {
                 usersDB.find().first() shouldEqual user

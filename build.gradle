@@ -61,6 +61,9 @@ dependencies {
     testRuntime 'org.jetbrains.spek:spek-junit-platform-engine:1.1.5'
     testCompile "org.amshove.kluent:kluent:$kluent_version"
 
+    // Graphql
+    compile group: 'com.graphql-java', name: 'graphql-java-tools', version: '4.3.0'
+    compile group: 'com.graphql-java', name: 'graphql-java', version: '6.0'
 }
 
 compileKotlin {

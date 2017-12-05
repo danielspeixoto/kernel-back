@@ -1,5 +1,9 @@
+package entities.project
+
 class ProjectContract {
-    interface Controller {}
+    interface Controller {
+        fun createProject(name : String) : Project
+    }
 
     interface UseCase {}
 

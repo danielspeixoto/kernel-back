@@ -1,0 +1,18 @@
+type Query {
+    getProjects : Project
+}
+
+
+type Project {
+    name: String!
+}
+
+type User {
+    _id: String,
+    name: String!,
+    email: String!
+}
+
+schema {
+    query: Query
+}

@@ -1,4 +1,5 @@
 
+import graphql.GraphQLEndpoint
 import io.ktor.application.Application
 import io.ktor.application.call
 import io.ktor.application.install
@@ -31,7 +32,20 @@ fun Application.main() {
             }
         })
         get("/") {
-//            call.respond()
+            println()
+            println()
+            println(call.request)
+            println()
+            println()
+            call.respond(
+                    GraphQLEndpoint.execute(
+                            """query {
+                        getProjects {
+                            name
+                        }
+                }
+                """.trimMargin())?: "{}"
+            )
         }
     }
 }
